@@ -1,0 +1,83 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Diphelia — About Divine Woods</title>
+  <meta name="description" content="Diphelia: Learn more about Divine Woods — Student at St. Mary High School, passionate about Computer Science and skilled in Desktop Publishing." />
+  <style>
+    :root{--bg:#f6f8fb;--card:#ffffff;--muted:#6b7280;--accent:#1f6feb}
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; background:var(--bg); color:#0f172a}
+    header{background:var(--accent);color:#fff;padding:18px 24px;text-align:center;font-size:22px;font-weight:700;letter-spacing:0.5px}
+    .wrap{max-width:880px;margin:48px auto;padding:24px}
+    .card{background:var(--card);border-radius:14px;padding:28px;box-shadow:0 6px 20px rgba(15,23,42,0.06);display:flex;gap:20px;align-items:center}
+    .avatar{flex:0 0 120px;height:120px;border-radius:12px;background:linear-gradient(135deg,#e6eefc,#f3f8ff);display:grid;place-items:center;font-weight:700;color:var(--accent);font-size:28px}
+    .content{flex:1}
+    h1{margin:0;font-size:26px}
+    .sub{color:var(--muted);margin-top:6px}
+    p{line-height:1.55;margin:14px 0}
+    .skills{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .tag{background:#eef4ff;border-radius:999px;padding:6px 10px;font-size:13px;color:#084298}
+    .meta{display:flex;gap:12px;color:var(--muted);font-size:14px;margin-top:10px}
+    .friend{margin-top:18px;font-style:italic;color:#0f172a}
+    .actions{margin-top:18px;display:flex;gap:10px}
+    .btn{padding:10px 14px;border-radius:10px;border:0;background:var(--accent);color:#fff;font-weight:600;cursor:pointer}
+    .btn.secondary{background:transparent;border:1px solid #e6eefc;color:var(--accent)}
+    @media (max-width:640px){.card{flex-direction:column;align-items:flex-start}.avatar{width:100%;height:96px;border-radius:10px;font-size:24px}}
+  </style>
+</head>
+<body>
+  <header>Diphelia</header>
+  <main class="wrap">
+    <article class="card" aria-labelledby="name">
+      <div class="avatar" aria-hidden="true">DW</div>
+      <div class="content">
+        <h1 id="name">Divine Woods</h1>
+        <div class="sub">Student, St. Mary High School — Class of 2025/2036</div><p>
+      I am a student of <strong>St. Mary High School</strong> studying <strong>Computer Science</strong>. I have a strong interest in technology and enjoy exploring practical ways to use computing to solve problems. I am skilled in <strong>desktop publishing</strong>, combining creativity with technical attention to produce clear and professional digital content.
+    </p>
+
+    <div class="skills" aria-label="skills">
+      <span class="tag">Computer Science</span>
+      <span class="tag">Desktop Publishing</span>
+      <span class="tag">Digital Design</span>
+      <span class="tag">Content Layout</span>
+    </div>
+
+    <div class="meta" aria-hidden="true">
+      <div>📚 St. Mary High School</div>
+      <div>🎓 Class of 2025/2036</div>
+    </div>
+
+    <p class="friend">I enjoy learning and collaborating with friends — especially my close friend <strong>Ophelia Bracewell</strong>.</p>
+
+    <div class="actions">
+      <button class="btn" onclick="copyAbout()">Copy About Text</button>
+      <button class="btn secondary" onclick="downloadHTML()">Download HTML</button>
+    </div>
+
+  </div>
+</article>
+
+<script>
+  function copyAbout(){
+    const text = `Divine Woods — Student at St. Mary High School (Class of 2025/2036). Passionate about Computer Science and skilled in desktop publishing. Close friend: Ophelia Bracewell.`;
+    navigator.clipboard?.writeText(text).then(()=>{
+      alert('About text copied to clipboard.')
+    }).catch(()=>{alert('Could not copy. You can select the text manually.')})
+  }
+
+  function downloadHTML(){
+    const blob = new Blob([document.documentElement.outerHTML], {type: 'text/html'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'diphelia_about_divine_woods.html';
+    document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+  }
+</script>
+
+  </main>
+</body>
+</html>
