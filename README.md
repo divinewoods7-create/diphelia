@@ -35,7 +35,7 @@
       <div class="avatar" aria-hidden="true">DW</div>
       <div class="content">
         <h1 id="name">Divine Woods</h1>
-        <div class="sub">Student, St. Mary High School — Class of 2025/2036</div><p>
+        <div class="sub">Student, St. Mary High School — Class of 2025/2026</div><p>
       I am a student of <strong>St. Mary High School</strong> studying <strong>Computer Science</strong>. I have a strong interest in technology and enjoy exploring practical ways to use computing to solve problems. I am skilled in <strong>desktop publishing</strong>, combining creativity with technical attention to produce clear and professional digital content.
     </p>
 
@@ -48,7 +48,7 @@
 
     <div class="meta" aria-hidden="true">
       <div>📚 St. Mary High School</div>
-      <div>🎓 Class of 2025/2036</div>
+      <div>🎓 Class of 2025/2026</div>
     </div>
 
     <p class="friend">I enjoy learning and collaborating with friends — especially my close friend <strong>Ophelia Bracewell</strong>.</p>
@@ -63,7 +63,7 @@
 
 <script>
   function copyAbout(){
-    const text = `Divine Woods — Student at St. Mary High School (Class of 2025/2036). Passionate about Computer Science and skilled in desktop publishing. Close friend: Ophelia Bracewell.`;
+    const text = `Divine Woods — Student at St. Mary High School (Class of 2025/2026). Passionate about Computer Science and skilled in desktop publishing. Close friend: Ophelia Bracewell.`;
     navigator.clipboard?.writeText(text).then(()=>{
       alert('About text copied to clipboard.')
     }).catch(()=>{alert('Could not copy. You can select the text manually.')})
